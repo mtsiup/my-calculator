@@ -30,9 +30,20 @@ function clean(){
     display.value = "";
 }
 
+
+
 document.querySelector('.decimal').addEventListener('click', decimal);
 function decimal(){
-    display.value = ".";
-}
+ let curReadOut = Fcalc.ReadOut.value;
+if (FlagNewNum){
+curReadOut = "0.";
+FlagNewNum = false;
+}else{
+if (curReadOut.indexOf(".") == -1)
+curReadOut += ".";}
+Fcalc.ReadOut.value = curReadOut;
+}   
+
+
 
 
