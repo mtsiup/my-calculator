@@ -1,14 +1,8 @@
-const display=document.querySelector('.display');
+const display = document.querySelector('.display');
     document.querySelectorAll('.digits button')
     .forEach(button => button.addEventListener('click', digitPressed));
 
-
-
-// const display=document.querySelector('.display-input');
-// document.querySelectorAll('.digits button')
-//     .forEach(button => button.addEventListener('click', digitPressed));
-
-function digitPressed(ev) {
+    function digitPressed(ev) {
     display.value += ev.target.innerText
 }
 
@@ -31,18 +25,14 @@ function clean(){
 }
 
 
-
 document.querySelector('.decimal').addEventListener('click', decimal);
-function decimal(){
- let curReadOut = Fcalc.ReadOut.value;
-if (FlagNewNum){
-curReadOut = "0.";
-FlagNewNum = false;
-}else{
-if (curReadOut.indexOf(".") == -1)
-curReadOut += ".";}
-Fcalc.ReadOut.value = curReadOut;
-}   
+function decimal() {
+  let dec = display.value.IndexOf('.');
+    if (dec!== '.') {
+    display.value += '.';
+  } else {
+decimal(display.value);
+}  }
 
 
 
