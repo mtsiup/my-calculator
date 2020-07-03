@@ -26,14 +26,17 @@ function clean(){
 
 
 document.querySelector('.decimal').addEventListener('click', decimal);
-function decimal() {
-  let dec = display.value.IndexOf('.');
-    if (dec!== '.') {
-    display.value += '.';
-  } else {
-decimal(display.value);
-}  }
+function decimal(ev) {
+const dec = ev.target.innerText.lastIndexOf('.');
+if (dec === -1) {
+    display.value +='.';
+  } }
 
 
-
-
+  
+//   let dec = display.value.lastIndexOf('.');
+//     if (dec!== -1) {
+//     display.value += '';
+//   } else {
+//     display.value += '.';
+// }  
